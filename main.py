@@ -1,16 +1,18 @@
 import plotly.graph_objs as go
 import yfinance as yf
 
+choice = input("Write a stock symbol: ")
+choice = choice.upper()
 
-data = yf.download(tickers='TSLA', period='5d',
-                   interval='15m', round=True)
+data = yf.download(tickers=choice, period='5d',
+                   interval='1h', rounding=True)
 
 fig = go.Figure()
 
 fig.add_trace(go.Candlestick(x=data.index, open=data['Open'], high=data['High'],
                              low=data['Low'], close=data['Close'], name='market data'))
 
-fig.update_layout(title='Tesla Share Price', yaxis_title='Stock Price (USD)')
+fig.update_layout(title= choice + ' Share Price', yaxis_title='Stock Price (USD)')
 
 fig.update_xaxes(
     rangeslider_visible=True,
