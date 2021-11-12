@@ -3,8 +3,9 @@ import yfinance as yf
 
 
 class AnalysisChart:
-    def __init__(self, choice=''):
+    def __init__(self, choice='', charting=1):
         self.choice = choice.upper()
+        self.charting = charting
 
     def showData(self):
 
@@ -13,8 +14,12 @@ class AnalysisChart:
 
         fig = go.Figure()
 
-        fig.add_trace(go.Ohlc(x=data.index, open=data['Open'], high=data['High'],
-                                     low=data['Low'], close=data['Close'], name='market data'))
+        if self.charting == 1:
+            fig.add_trace(go.Ohlc(x=data.index, open=data['Open'], high=data['High'],
+                                         low=data['Low'], close=data['Close'], name='market data'))
+        elif self.charting == 2:
+            fig.add_trace(go.Candlestick(x=data.index, open=data['Open'], high=data['High'],
+                                  low=data['Low'], close=data['Close'], name='market data'))
 
         fig.update_layout(title=self.choice + ' Share Price', yaxis_title='Stock Price (USD)')
 
