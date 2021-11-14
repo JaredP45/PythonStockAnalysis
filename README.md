@@ -1,4 +1,4 @@
-# PythonStockAnalysis
+# Python Stock Analysis Tool
 This is my final project for my Python with Data Science class and is currently a WIP.
 The data set is being supplied by Yahoo Finance API.
 
