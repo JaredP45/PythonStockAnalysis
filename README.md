@@ -10,5 +10,6 @@ UPDATES:
     * Completely changed the project by learning dash from a tutorial (see credits). Charts now display selected stocks and allow some manipulation.
 
 CREDITS:
-    Color Scheme - https://www.nordtheme.com/docs/colors-and-palettes
-    Plotly/Dash Tutorial - https://www.statworx.com/en/blog/how-to-build-a-dashboard-in-python-plotly-dash-step-by-step-tutorial/#contents
+   * Color Scheme - https://www.nordtheme.com/docs/colors-and-palettes
+   * Dataset - https://www.kaggle.com/camnugent/sandp500 
+   * Plotly/Dash Tutorial - https://www.statworx.com/en/blog/how-to-build-a-dashboard-in-python-plotly-dash-step-by-step-tutorial/#contents
