@@ -419,7 +419,7 @@ html, body{
 }
 
 body {
-  background-color: #3b4252;
+  background-color: #1C2535;
   color: #d8d8d8;
   height: 100%;
   margin: 0;
@@ -446,7 +446,7 @@ a {
   text-decoration: none;
 }
 .bg-light-grey{
-  background-color: #4c566a;
+  background-color: #2A3850;
 }
 .text-padding{
   padding: 5px;
@@ -484,12 +484,15 @@ a {
   height: 50px;
   padding-bottom: 12px;
 }
+.Select--multi .Select-value {
+    background-color: #5e81ac;
+    border-color: #434c5e;
+    color: #d8dee9;
+}
 .Select-control, .Select-menu-outer, .Select-multi-value-wrapper, .select-up, .is-open .Select-control {
   background-color: #2e3440;
-  color: white;
-
+  color: #d8dee9;
 }
-
 #modelselector .Select-control{
   max-height: 82px;
   overflow-y: auto;
