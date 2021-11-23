@@ -7,7 +7,7 @@ My goal is to allow the user to choose which stock to view and to enable data an
 
 UPDATES:
 11-22-2021
-    * Completely changed the project by learning dash from a tutorial (see credits). Charts now display selected stocks and allow some manipulation.
+   * Completely changed the project by learning dash from a tutorial (see credits). Charts now display selected stocks and allow some manipulation.
 
 CREDITS:
    * Color Scheme - https://www.nordtheme.com/docs/colors-and-palettes
