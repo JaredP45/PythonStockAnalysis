@@ -70,19 +70,23 @@ def update_timeseries(selected_dropdown_value):
                                 opacity=0.7,
                                 name=stock,
                                 textposition='bottom center'))
+
     traces = [trace]
     data = [val for sublist in traces for val in sublist]
+
     figure = {'data': data,
               'layout': go.Layout(
-                  colorway=['#b48ead', '#a3be8c', '#ebcb8b', '#d08770', '#bf616a', '#FF0056'],
+                  colorway=['#DF2935', '#679436', '#FF6542', '#427AA1', '#2D0320', '#064789'],
                   template='plotly_dark',
-                  paper_bgcolor='rgba(0, 0, 0, 0)',
-                  plot_bgcolor='rgba(0, 0, 0, 0)',
+                  paper_bgcolor='#2A3850',
+                  plot_bgcolor='#eceff4',
                   margin={'b': 15},
                   hovermode='x',
                   autosize=True,
                   title={'text': 'Stock Prices', 'font': {'color': 'white'}, 'x': 0.5},
                   xaxis={'range': [df_sub.index.min(), df_sub.index.max()]},
+                  yaxis_title={'text': 'Share Price'},
+                  xaxis_title={'text': 'Date Range'},
               ),
               }
     return figure
@@ -92,9 +96,9 @@ def update_timeseries(selected_dropdown_value):
               [Input('stockselector', 'value')])
 def update_change(selected_dropdown_value):
     """ Draw traces of the feature 'change' based one the currently selected stocks """
+
     trace = []
     df_sub = df
-    # Draw and append traces for each stock
     for stock in selected_dropdown_value:
         trace.append(go.Scatter(x=df_sub[df_sub['Name'] == stock].index,
                                 y=df_sub[df_sub['Name'] == stock]['volume'],
@@ -104,19 +108,20 @@ def update_change(selected_dropdown_value):
                                 textposition='bottom center'))
     traces = [trace]
     data = [val for sublist in traces for val in sublist]
-    # Define Figure
     figure = {'data': data,
               'layout': go.Layout(
-                  colorway=['#b48ead', '#a3be8c', '#ebcb8b', '#d08770', '#bf616a', '#FF0056'],
+                  colorway=['#DF2935', '#679436', '#FF6542', '#427AA1', '#2D0320', '#064789'],
                   template='plotly_dark',
-                  paper_bgcolor='rgba(0, 0, 0, 0)',
-                  plot_bgcolor='rgba(0, 0, 0, 0)',
+                  paper_bgcolor='#2A3850',
+                  plot_bgcolor='#eceff4',
                   margin={'t': 50},
                   height=250,
                   hovermode='x',
                   autosize=True,
                   title={'text': 'Market Volume', 'font': {'color': 'white'}, 'x': 0.5},
-                  xaxis={'showticklabels': False, 'range': [df_sub.index.min(), df_sub.index.max()]},
+                  xaxis={'range': [df_sub.index.min(), df_sub.index.max()]},
+                  yaxis_title={'text': 'Volume in Million'},
+                  xaxis_title={'text': 'Date Range'},
               ),
               }
     return figure
